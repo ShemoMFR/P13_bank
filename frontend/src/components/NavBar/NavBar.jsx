@@ -3,6 +3,7 @@ import React from 'react';
 
 /* CSS */
 import './NavBar.css';
+import '../../style.css';
 
 const NavBar = () => {
   return (
