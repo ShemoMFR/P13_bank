@@ -2,9 +2,9 @@
 import Home from './pages/Home/Home';
 import Signin from './pages/Signin/Signin';
 import User from './pages/User/User';
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 
 /* Components */
-import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 
 /* CSS */
@@ -12,12 +12,15 @@ import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            <NavBar />
-            <div style={{flex: '1'}}>
-                <User />
-            </div>
-            <Footer />
+        <div className="App"> 
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/user" element={<User />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>             
         </div>
     );
 }
