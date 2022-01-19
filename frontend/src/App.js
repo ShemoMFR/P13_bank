@@ -1,6 +1,7 @@
 /* Pages */
 import Home from './pages/Home/Home';
 import Signin from './pages/Signin/Signin';
+import User from './pages/User/User';
 
 /* Components */
 import NavBar from './components/NavBar/NavBar';
@@ -14,7 +15,7 @@ function App() {
         <div className="App">
             <NavBar />
             <div style={{flex: '1'}}>
-                <Signin />
+                <User />
             </div>
             <Footer />
         </div>
