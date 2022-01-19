@@ -1,5 +1,6 @@
 /* Pages */
 import Home from './pages/Home/Home';
+import Signin from './pages/Signin/Signin';
 
 /* Components */
 import NavBar from './components/NavBar/NavBar';
@@ -12,7 +13,9 @@ function App() {
     return (
         <div className="App">
             <NavBar />
-            <Home />
+            <div style={{flex: '1'}}>
+                <Signin />
+            </div>
             <Footer />
         </div>
     );
