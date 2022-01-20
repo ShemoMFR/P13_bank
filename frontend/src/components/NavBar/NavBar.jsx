@@ -10,12 +10,12 @@ const NavBar = (props) => {
 
   const connexion = props.page === 'user' ? 
       <div>
-        <Link to='/User' class="main-nav-item" href="./user.html">
-          <i class="fa fa-user-circle"></i>
+        <Link to='/User' className="main-nav-item" href="./user.html">
+          <i className="fa fa-user-circle"></i>
           Tony
         </Link>
-        <Link class="main-nav-item" to='/'>
-          <i class="fa fa-sign-out"></i>
+        <Link className="main-nav-item" to='/'>
+          <i className="fa fa-sign-out"></i>
           Sign Out
         </Link>
       </div>

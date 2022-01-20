@@ -4,11 +4,19 @@ import React from 'react';
 /* components */
 import NavBar from '../../components/NavBar/NavBar'
 
+/* REDUX */
+import { useSelector, useDispatch } from 'react-redux';
+
 /* CSS */
 import './User.css';
 import '../../style.css';
 
 const User = () => {
+
+    const state = useSelector(state => state);
+
+    console.log(state)
+
     return (
         <React.Fragment>
             <NavBar page='user' /> 

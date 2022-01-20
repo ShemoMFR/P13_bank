@@ -1,0 +1,2 @@
+export const CONNEXION = 'CONNEXION';
+export const CONNEXION_FAILURE = 'CONNEXION_FAILURE';
