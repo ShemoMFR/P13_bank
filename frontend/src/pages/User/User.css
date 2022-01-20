@@ -87,6 +87,44 @@
     color: #fff;
 }
 
+.containerInputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-wrapper-left, .input-wrapper-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.input-wrapper-left {
+
+    align-items: flex-end;
+}
+
+.input-wrapper-right {
+    align-items: flex-start;
+}
+
+.input-left, .input-right {
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.btn, .cancel {
+    width: 60%;
+    height: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+
 /* .end {
     display: flex;
     justify-content: flex-end;

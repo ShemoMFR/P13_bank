@@ -28,7 +28,6 @@ const Signin = () => {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(connexion(user));
-      
     }
 
     useEffect(() => {
@@ -36,9 +35,7 @@ const Signin = () => {
         if (state.token) {
             dispatch(getFetchDataUser(state.token));
 
-                navigate('/user')
-
-
+            navigate('/user');
         }
 
     }, [state.token])
