@@ -1,2 +1,4 @@
 export const CONNEXION = 'CONNEXION';
 export const CONNEXION_FAILURE = 'CONNEXION_FAILURE';
+export const GET_DATA_USER = 'GET_DATA_USER';
+export const GET_DATA_FAILED = 'GET_DATA_FAILED';

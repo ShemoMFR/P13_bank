@@ -1,11 +1,12 @@
 /* Librairies */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 /* components */
 import NavBar from '../../components/NavBar/NavBar'
 
 /* REDUX */
 import { useSelector, useDispatch } from 'react-redux';
+import { getFetchDataUser } from '../../redux/user/actionUser';
 
 /* CSS */
 import './User.css';
@@ -13,16 +14,16 @@ import '../../style.css';
 
 const User = () => {
 
-    const state = useSelector(state => state);
-
-    console.log(state)
-
+    const state = useSelector(state => state.connexion);
+    let datasUser = useSelector(state => state.userDatas);
+    const dispatch = useDispatch();
+         
     return (
         <React.Fragment>
             <NavBar page='user' /> 
             <main className="main bg-dark">
                 <div className="header">
-                    <h1 style={{marginBottom: '10px'}}>Welcome back<br />Tony Jarvis!</h1>
+                    <h1 style={{marginBottom: '10px'}}>Welcome back<br />{`${datasUser.firstName && datasUser.firstName} ${datasUser.lastName && datasUser.lastName}!`}</h1>
                     <button className="edit-button">Edit Name</button>
                 </div>
                 <h2 className="sr-only">Accounts</h2>

@@ -1,10 +1,9 @@
 /* Librairies */
 import React, {useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
 
 /* REDUX */
 import { useSelector, useDispatch } from 'react-redux';
-import { connexion } from '../../redux/user/actionUser';
+import { connexion, getFetchDataUser } from '../../redux/user/actionUser';
 import { useNavigate } from "react-router-dom";
 
 /* component */
@@ -23,14 +22,26 @@ const Signin = () => {
         password: ''
     });
 
-    const state = useSelector(state => state);
+    const state = useSelector(state => state.connexion);
     const dispatch = useDispatch();
 
     function handleSubmit(e) {
-        /* e.preventDefault(); */
+        e.preventDefault();
         dispatch(connexion(user));
-        navigate('/User');
+      
     }
+
+    useEffect(() => {
+
+        if (state.token) {
+            dispatch(getFetchDataUser(state.token));
+
+                navigate('/user')
+
+
+        }
+
+    }, [state.token])
 
     return (
         <React.Fragment>

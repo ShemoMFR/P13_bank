@@ -1,5 +1,5 @@
 /* Librairies */
-import React from 'react';
+import React, {useEffect} from 'react';
 
 /* component */ 
 import NavBar from '../../components/NavBar/NavBar'
@@ -8,7 +8,8 @@ import NavBar from '../../components/NavBar/NavBar'
 import './Home.css';
 import '../../style.css';
 
-const Home = () => {
+const Home = () => {  
+
     return (
         <React.Fragment>
             <NavBar page='Home' />
