@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 /* REDUX */
 import { useSelector, useDispatch } from 'react-redux';
 import { connexion } from '../../redux/user/actionUser';
+import { useNavigate } from "react-router-dom";
 
 /* component */
 import NavBar from '../../components/NavBar/NavBar'
@@ -14,6 +15,8 @@ import './Signin.css';
 import '../../style.css';
 
 const Signin = () => {
+
+    let navigate = useNavigate();
 
     const [user, setUser] = useState({
         email: '',
@@ -26,6 +29,7 @@ const Signin = () => {
     function handleSubmit(e) {
         /* e.preventDefault(); */
         dispatch(connexion(user));
+        navigate('/User');
     }
 
     return (
@@ -47,7 +51,7 @@ const Signin = () => {
                         <div className="input-remember">
                             <input type="checkbox" id="remember-me" /><label htmlFor="remember-me">Remember me</label>
                         </div>
-                         <Link to='/User' className="sign-in-button">Sign In</Link>
+                        <button className="sign-in-button">Sign In</button>
                         
                     </form>
                 </section>

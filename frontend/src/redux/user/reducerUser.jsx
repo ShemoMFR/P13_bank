@@ -10,7 +10,7 @@ const reducerDataUser = (state = initialState, action) => {
         case CONNEXION:
             return {
                 ...state,
-                toke: action.payload
+                token: action.payload
             }
         case CONNEXION_FAILURE:
             return {
