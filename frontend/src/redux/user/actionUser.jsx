@@ -1,4 +1,4 @@
-import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED } from './type';
+import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE } from './type';
 
 export const connexionSuccess = (data) => {
     return {
@@ -28,6 +28,35 @@ export const getDataFailed = (error) => {
     }
 }
 
+export const successModify = (data) => {
+    return {
+        type: MODIFY_DATA_USER,
+        payload: data
+    }
+}
+
+export const failureModify = (error) => {
+    return {
+        type: MODIFY_FAILURE,
+        payload: error
+    }
+}
+
+export const modifyDatasUser = (token, data) => {
+    return dispatch => {
+        fetch("http://localhost:3001/api/v1/user/profile", {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => dispatch(successModify(data.body)) )
+        .catch(error => dispatch(failureModify(error)))
+    }
+}
 
 export const getFetchDataUser = (token) => {
     

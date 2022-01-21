@@ -6,7 +6,7 @@ import NavBar from '../../components/NavBar/NavBar'
 
 /* REDUX */
 import { useSelector, useDispatch } from 'react-redux';
-import { getFetchDataUser } from '../../redux/user/actionUser';
+import { getFetchDataUser, modifyDatasUser } from '../../redux/user/actionUser';
 
 /* CSS */
 import './User.css';
@@ -15,23 +15,32 @@ import '../../style.css';
 const User = () => {
 
     const [toggle, setToggle] = useState(false);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [dataUser, setDataUSer] = useState({
+        firstName: '',
+        lastName: '',
+    });
 
     const state = useSelector(state => state.connexion);
     let datasUser = useSelector(state => state.userDatas);
     const dispatch = useDispatch();
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        dispatch(modifyDatasUser(state.token, dataUser));
+        setToggle(false);
+        console.log(datasUser)
+    }
+
     const header = toggle ? 
         <div className="header">
             <h1 style={{marginBottom: '10px'}}>Welcome back</h1>
-            <form className='containerInputs'>
+            <form onSubmit={handleSubmit} className='containerInputs'>
                 <div className="input-wrapper-left">
-                    <input className='input-left' value={firstName}  />
-                    <button className='btn'>SAVE</button>
+                    <input className='input-left' onChange={(e) => setDataUSer({...dataUser, firstName: e.target.value})} placeholder={datasUser.firstName}  />
+                    <button className='btn' >SAVE</button>
                 </div>
                 <div className="input-wrapper-right">
-                    <input className='input-right' value={lastName}  />
+                    <input className='input-right' onChange={(e) => setDataUSer({...dataUser, lastName: e.target.value})} placeholder={datasUser.lastName} />
                     <div className='cancel' onClick={() => setToggle(false) }>CANCEL</div>
                 </div>
             </form>

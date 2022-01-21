@@ -1,4 +1,4 @@
-import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED } from './type';
+import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE } from './type';
 
 const initialState = {
     token : '',
@@ -43,6 +43,17 @@ export const reducerFetchDataUser = (state = dataUser, action) => {
                 lastName: action.payload.lastName
             }
         case GET_DATA_FAILED:
+            return {
+                ...state,
+                error: action.payload
+            }
+        case MODIFY_DATA_USER:
+            return {
+                ...state,
+                firstName: action.payload.firstName,
+                lastName: action.payload.lastName
+            }
+        case MODIFY_FAILURE:
             return {
                 ...state,
                 error: action.payload

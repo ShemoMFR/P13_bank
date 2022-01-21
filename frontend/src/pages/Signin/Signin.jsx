@@ -26,7 +26,7 @@ const Signin = () => {
     const dispatch = useDispatch();
 
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); 
         dispatch(connexion(user));
     }
 
