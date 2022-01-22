@@ -4,9 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const PrivateRoute = () => {
 
-    const state = useSelector(state => state.connexion);
-
-    const auth = state.token; // determine if authorized, from context or however you're doing it
+    const auth = useSelector(state => state.connexion.token);; // determine if authorized, from context or however you're doing it
 
     // If authorized, return an outlet that will render child elements
     // If not, return element that will navigate to login page
