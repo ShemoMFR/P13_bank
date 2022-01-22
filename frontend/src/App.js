@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 /* Components */
 import Footer from './components/Footer/Footer';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 /* CSS */
 import './App.css';
@@ -21,7 +22,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/signin" element={<Signin />} />
-                    <Route path="/user" element={<User />} />
+                    <Route path="/user" element={<PrivateRoute />}>
+                        <Route exact path='/user' element={<User/>}/>   
+                    </Route>
                 </Routes>
                 <Footer />
             </BrowserRouter>             

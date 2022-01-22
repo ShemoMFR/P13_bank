@@ -4,3 +4,4 @@ export const GET_DATA_USER = 'GET_DATA_USER';
 export const GET_DATA_FAILED = 'GET_DATA_FAILED';
 export const MODIFY_DATA_USER = 'MODIFY_DATA_USER';
 export const MODIFY_FAILURE = 'MODIFY_FAILURE';
+

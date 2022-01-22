@@ -111,6 +111,7 @@
 .input-left, .input-right {
     height: 30px;
     margin-bottom: 5px;
+    padding: 5px;
 }
 
 .btn, .cancel {

@@ -34,7 +34,6 @@ const Signin = () => {
 
         if (state.token) {
             dispatch(getFetchDataUser(state.token));
-
             navigate('/user');
         }
 

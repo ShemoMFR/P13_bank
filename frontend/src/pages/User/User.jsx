@@ -28,7 +28,6 @@ const User = () => {
         e.preventDefault();
         dispatch(modifyDatasUser(state.token, dataUser));
         setToggle(false);
-        console.log(datasUser)
     }
 
     const header = toggle ? 
