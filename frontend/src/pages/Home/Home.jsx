@@ -1,8 +1,5 @@
 /* Librairies */
-import React, {useEffect} from 'react';
-
-/* component */ 
-import NavBar from '../../components/NavBar/NavBar'
+import React from 'react';
 
 /* CSS */
 import './Home.css';
@@ -12,7 +9,6 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <NavBar page='Home' />
             <div className='container'>
                 <div className="hero">
                     <section className="hero-content">

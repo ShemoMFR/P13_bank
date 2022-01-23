@@ -1,4 +1,4 @@
-import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE } from './type';
+import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE, LOGOUT } from './type';
 
 export const connexionSuccess = (data) => {
     return {
@@ -39,6 +39,12 @@ export const failureModify = (error) => {
     return {
         type: MODIFY_FAILURE,
         payload: error
+    }
+}
+
+export const logout = () => {
+    return {
+        type: LOGOUT,
     }
 }
 

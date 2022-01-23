@@ -1,29 +1,41 @@
 /* Librairies */
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+
+/* REDUX */
+import { logout } from '../../redux/user/actionUser';
 
 /* CSS */
 import './NavBar.css';
 import '../../style.css';
 
-const NavBar = (props) => {
+const NavBar = () => {
 
-  const connexion = props.page === 'user' ? 
-      <div>
-        <Link to='/User' className="main-nav-item" href="./user.html">
-          <i className="fa fa-user-circle"></i>
-          Tony
-        </Link>
-        <Link className="main-nav-item" to='/'>
-          <i className="fa fa-sign-out"></i>
-          Sign Out
-        </Link>
-      </div>
-      :
-      <Link to='/Signin' className="main-nav-item" >
+    const state = useSelector(state => state.connexion);
+    let datasUser = useSelector(state => state.userDatas);
+    const dispatch = useDispatch();
+
+    function logoutHandler() {
+        dispatch(logout());
+    }
+
+    const connexion = state.token.length > 1 ? 
+        <>
+            <Link to='/User' className="main-nav-item" href="./user.html">
+                <i className="fa fa-user-circle"></i>
+                {datasUser.firstName}
+            </Link>
+            <Link onClick={logoutHandler} className="main-nav-item" to='/'>
+                <i className="fa fa-sign-out"></i>
+                Sign Out
+            </Link>
+        </>
+        :
+        <Link to='/Signin' className="main-nav-item" >
         <i className="fa fa-user-circle" style={{marginRight: '5px'}}></i>
         Sign In
-      </Link>
+        </Link>
 
   return (
     <nav className="main-nav">

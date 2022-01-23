@@ -1,4 +1,4 @@
-import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE } from './type';
+import { CONNEXION, CONNEXION_FAILURE, GET_DATA_USER, GET_DATA_FAILED, MODIFY_DATA_USER, MODIFY_FAILURE, LOGOUT } from './type';
 
 const initialState = {
     token : '',
@@ -27,6 +27,8 @@ export const reducerDataUser = (state = initialState, action) => {
                 ...state,
                 error: action.payload
             }
+        case LOGOUT:
+            return state = initialState
         default:
             return state;
     }
@@ -58,6 +60,8 @@ export const reducerFetchDataUser = (state = dataUser, action) => {
                 ...state,
                 error: action.payload
             }
+        case LOGOUT:
+            return state = dataUser
         default:
             return state;
     }

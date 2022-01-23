@@ -1,12 +1,9 @@
 /* Librairies */
 import React, { useState } from 'react';
 
-/* components */
-import NavBar from '../../components/NavBar/NavBar'
-
 /* REDUX */
 import { useSelector, useDispatch } from 'react-redux';
-import { getFetchDataUser, modifyDatasUser } from '../../redux/user/actionUser';
+import { modifyDatasUser } from '../../redux/user/actionUser';
 
 /* CSS */
 import './User.css';
@@ -52,7 +49,6 @@ const User = () => {
          
     return (
         <React.Fragment>
-            <NavBar page='user' /> 
             <main className="main bg-dark">
                 {header}
                 <h2 className="sr-only">Accounts</h2>

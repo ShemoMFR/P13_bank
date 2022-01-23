@@ -6,9 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { connexion, getFetchDataUser } from '../../redux/user/actionUser';
 import { useNavigate } from "react-router-dom";
 
-/* component */
-import NavBar from '../../components/NavBar/NavBar'
-
 /* CSS */
 import './Signin.css';
 import '../../style.css';
@@ -41,7 +38,6 @@ const Signin = () => {
 
     return (
         <React.Fragment>
-            <NavBar page='Signin' />
             <main className="main bg-dark">
                 <section className="sign-in-content">
                     <i className="fa fa-user-circle" style={{marginRight: '5px'}}></i>
@@ -59,7 +55,6 @@ const Signin = () => {
                             <input type="checkbox" id="remember-me" /><label htmlFor="remember-me">Remember me</label>
                         </div>
                         <button className="sign-in-button">Sign In</button>
-                        
                     </form>
                 </section>
             </main>
